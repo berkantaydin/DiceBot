@@ -451,7 +451,7 @@ currency:btc*/
                 {
                     List<KeyValuePair<string, string>> pairs = new List<KeyValuePair<string, string>>();
                     pairs.Add(new KeyValuePair<string, string>("access_token", accesstoken));
-                    pairs.Add(new KeyValuePair<string, string>("seed_client", R.Next(0, int.MaxValue).ToString()));
+                    pairs.Add(new KeyValuePair<string, string>("seed_client", "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"));
                     FormUrlEncodedContent Content = new FormUrlEncodedContent(pairs);
                     string sEmitResponse = Client.PostAsync("api/change-seeds", Content).Result.Content.ReadAsStringAsync().Result;
                     bsResetSeed bsbase = json.JsonDeserialize<bsResetSeed>(sEmitResponse.Replace("\"return\":", "\"_return\":"));
